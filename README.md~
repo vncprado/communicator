@@ -5,8 +5,7 @@ Software de conexão socket para serial para a equipe de futebol de robôs do SI
 Inclui um protocolo de comunicação com os robôs simplificado.
 
 Programa que lê comandos enviados por um socket e converte este segundo um protocolo e envia um caracter ASCII por serial.
-A ideia é passar para os robôs um caractere ASCII único que represente seu id e comando a executar.
-Funciona para 3 robôs (1, 2, 3).
+A ideia é passar para os robôs um caractere ASCII único que represente seu id e comando a executar. Funciona atualmente com 3 robôs (1, 2, 3).
 
 O programa recebe comandos no formato:
 
