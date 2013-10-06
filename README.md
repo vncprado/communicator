@@ -1,6 +1,6 @@
 communicator
 ============
-
+PT-BR
 Software de conexão socket para serial para a equipe de futebol de robôs do SIR_LAB.
 Inclui um protocolo de comunicação com os robôs simplificado.
 
