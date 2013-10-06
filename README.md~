@@ -1,6 +1,12 @@
 communicator
 ============
 
+[EN]
+Connection software socket/serial for the SIR_LAB Very Small Size robot soccer team. This software includes a simplified robot communication protocol.
+
+Commands to robots are read from a socket and translate by a protocol and sends a ASCII character by serial. The main idea is send to robot only one ASCII that represents their ID and a command to execute. This version works with 3 robots.
+
+[PT-BR]
 Software de conexão socket para serial para a equipe de futebol de robôs do SIR_LAB.
 Inclui um protocolo de comunicação com os robôs simplificado.
 
@@ -8,6 +14,11 @@ Programa que lê comandos enviados por um socket e converte este segundo um prot
 A ideia é passar para os robôs um caractere ASCII único que represente seu id e comando a executar.
 Funciona para 3 robôs (1, 2, 3).
 
+[EN]
+Commands are received in the following format:
+
+
+[PT-BR]
 O programa recebe comandos no formato:
 
     id_robo;comando#
