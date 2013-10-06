@@ -1,14 +1,11 @@
 communicator
 ============
-PT-BR
-Software de conexão socket para serial para a equipe de futebol de robôs do SIR_LAB.
-Inclui um protocolo de comunicação com os robôs simplificado.
 
-Programa que lê comandos enviados por um socket e converte este segundo um protocolo e envia um caracter ASCII por serial.
-A ideia é passar para os robôs um caractere ASCII único que represente seu id e comando a executar.
-Funciona para 3 robôs (1, 2, 3).
+Connection software socket/serial for the SIR_LAB Very Small Size robot soccer team. This software includes a simplified robot communication protocol.
 
-O programa recebe comandos no formato:
+Commands to robots are read from a socket and translate by a protocol and sends a ASCII character by serial. The main idea is send to robot only one ASCII that represents their ID and a command to execute. This version works with 3 robots.
+
+Commands are received in the following format:
 
     id_robo;comando#
     
@@ -16,11 +13,11 @@ Ex:
     
     1;f#
     
-Os comandos utilizados foram:
+basic commands is:
 
-    f (frente), t (trás), e (esquerda), d (direita)
+    f (foward), t (backward), e (left), d (rigth)
 
-Foram utilizados caracteres da tabela ASCII começando em !
+The following characters ASCII used starting with !
 
     | id|cmd| dec|cha|
     |----------------|
@@ -39,25 +36,22 @@ Foram utilizados caracteres da tabela ASCII começando em !
     | 3 | e | 43 | + |
     | 3 | d | 44 | , |
 
-O software traduz a string enviada por socket (ex: 1;f#) para o referente caracter da tabela na função cmd2dec em protocolo.c
-Nesta função o valor da multiplicação entre id*comando (ex: 1*f(102)=102, 2*f(102)=204, ...) é utilizado tal qual numa tabela HASH
-para definir o valor a ser atribuído. Pode parecer confuso mas é mais simples do que parece rs.
+The software translate a string sent by socket (ex: 1;f#) to the ASCII character in the function cmd2dec in the file protocolo.c. In this function the value of multipling id*command (ex: 1*f(102)=102, 2*f(102)=204, ...) is used like a HASH table to define the valeu to be atributed. It is not as confusing as it sems lol.
 
-No projeto ainda existe um arquivo source.c que emula a fonte de dados e é compilado conjuntamente.
-Este programa pode ser utilizado como base para o desenvolvimento da origem dos dados reais ou para testes de comunicação.
+In the project exists a file source.c witch emulates the source of data. It is compiled together. This software can be used as a base for source of data in communication tests.
 
-Para compilar:
+Compile:
 
     $ chmod +x compila.sh
     $ ./compila.sh
 
-Para rodar:
+Run:
 
     $ ./source
     $ ./communicator
 
 
-Att,
+Sincerly,
 Vinícius Prado, vncprado@gmail.com
 
 
